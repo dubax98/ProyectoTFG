@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/funciones/funciones.js"></script>
+    <link href="~/css/estilos.css" rel="stylesheet" />
+    <link href="~/css/estilosIndex.css" rel="stylesheet" />
+    <link href="~/css/estilosCarrito.css" rel="stylesheet" />
+    <link href="~/css/estilosMensaje.css" rel="stylesheet" />
+    <link href="~/css/estilosGalFoto.css" rel="stylesheet" />
+    <link href="~/css/estilosFormulario.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">         
+            <div class="navbar-collapse collapse" style="background-color:white">
+                <div id="botonMenu">
+                    <span class="glyphicon glyphicon-align-justify" id="btnMenu" onclick="openMenu()"> Menú</span>
+                </div>
+                <div class="informacion">
+                    @Html.ActionLink("Contacto", "Contact", "Home")
+                    @Html.ActionLink("Enviar mensaje", "Mensajeria", "Home")
+                    <h3 id="tituloHeader">Estudio de fotografía</h3>
+                </div>
+                <div class="login">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" id="botonCerrarMenu" onclick="closeMenu()">&times;</a>
+                <ul id="contenidoMenu">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>
+                        <p>Galería de fotografía<i id="subMenuFotos" class="glyphicon glyphicon-triangle-top" onclick="mostrarSubMenu('subMenuFotos')"></i></p>
+                        <ul>
+                            <li class="subMenuFotos primerEnlace">@Html.ActionLink("Bodas", "Bodas", "Home")</li>
+                            <li class="subMenuFotos">@Html.ActionLink("Comuniones", "Comuniones", "Home")</li>
+                            <li class="subMenuFotos">@Html.ActionLink("Bebés", "Bebes", "Fotos")</li>
+                            <li class="subMenuFotos">@Html.ActionLink("Familias", "Familiares")</li>
+                            <li class="subMenuFotos">@Html.ActionLink("Días especiales", "Festivos")</li>
+                            <li class="subMenuFotos">@Html.ActionLink("Embarazadas", "Embarazos")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Fotografía digital<i id="subMenuDigital" class="glyphicon glyphicon-triangle-top" onclick="mostrarSubMenu('subMenuDigital')"></i></p>
+                        <ul>
+                            <li class="subMenuDigital primerEnlace">@Html.ActionLink("Revelado fotográfico", "RevFotografico", "Home")</li>
+                            <li class="subMenuDigital">@Html.ActionLink("Álbum digital", "AlbumDigital", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Imprenta digital<i id="subMenuImprenta" class="glyphicon glyphicon-triangle-top" onclick="mostrarSubMenu('subMenuImprenta')"></i></p>
+                        <ul>
+                            <li class="subMenuImprenta primerEnlace">@Html.ActionLink("Impresión digital", "ImpDigColor", "Home")</li>
+                            <li class="subMenuImprenta">@Html.ActionLink("Tarjetas de visita", "TarVisita", "Home")</li>
+                            <li class="subMenuImprenta">@Html.ActionLink("Packagin", "Packagin", "Home")</li>
+                            <li class="subMenuImprenta">@Html.ActionLink("Calendarios", "Calendarios", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Soportes fotográficos<i id="subMenuAcabados" class="glyphicon glyphicon-triangle-top" onclick="mostrarSubMenu('subMenuAcabados')"></i></p>
+                        <ul>
+                            <li class="subMenuAcabados primerEnlace">@Html.ActionLink("Lienzo", "Lienzo", "Home")</li>
+                            <li class="subMenuAcabados">@Html.ActionLink("Cromalux", "Cromalux", "Home")</li>
+                            <li class="subMenuAcabados">@Html.ActionLink("Capatext", "Capatext", "Home")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Invitaciones de bodas", "InvitacionBoda", "Home")</li>
+                    <li>
+                        @{
+                            if (User.IsInRole("Usuario") || User.IsInRole("Administrador"))
+                            {
+                                @Html.ActionLink("Tienda online", "ListadoFiltroProductos", "CarritoCompras")
+                            }
+                        }
+                    </li>
+                    <li>
+                        <div class="raya"></div>
+                    </li>
+                </ul>
+                <div class="contenidoOculto">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+    <hr />
+    <footer class="page-footer font-small unique-color-dark">
+        <div class="container text-center text-md-left mt-5">
+            <div class="row mt-3">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">ESTUDIO DE FOTOGRAFÍA</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        Somos una empresa dedicada a la fotografía digital ubicada en Alcorcón. Para más información no dude en contactarnos a
+                        nuestro número de teléfono <a href="#!">91643...</a> o enviarnos un mensaje a nuestro correo <a href="#!">estudiofotografico@fotoalcorcon.es</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Todos los enlaces</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>@Html.ActionLink("Mapa del sitio", "SiteMaps", "Home")</p>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Alcorcón, ******, ESPAÑA</p>
+                    <p>estudiofotografico@fotoalcorcon.es</p>
+                    <p>91643....</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            <p class="text-center text-md-left">&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

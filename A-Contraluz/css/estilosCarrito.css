@@ -1,0 +1,75 @@
+﻿.carritoCompra {
+    background-color: white;
+    margin-top: -20px;
+}
+
+    .carritoCompra h2 {
+        color: black;
+        margin-left: 50px;
+    }
+
+    .carritoCompra p {
+        color: black;
+        margin-left: 20px;
+    }
+
+.encabezadoCarrito {
+    width: 100%;
+    background-color: #eeeded;
+}
+
+    .encabezadoCarrito > h2 {
+        position: absolute;
+        margin-top: 35px;
+    }
+
+    .encabezadoCarrito input {
+        width: 600px;
+        margin-left: 700px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+.divProductos {
+    background-color: transparent;
+    color: black;
+}
+
+.divProductos2 {
+    width: 200px;
+    height: 360px;
+    margin-left: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+
+    .divProductos2 > img {
+        margin-left: 25px;
+        height: 150px;
+        width: 150px;
+        margin-top: 20px;
+    }
+
+    .divProductos2 > button {
+        border-radius: 20px;
+    }
+
+.listadoCategoria li {
+    color: black;
+    font-size: 13px;
+    margin-left: -20px;
+}
+
+    .listadoCategoria li:hover {
+        color: black;
+    }
+
+.talla {
+    width: 50px;
+    color: black;
+    font-size: 14px;
+}
+
+#btnBuscarProducto {
+    width: 100px;
+    margin-left: 20px;
+}

@@ -1,0 +1,151 @@
+﻿#logo {
+    margin-left: 270px;
+    margin-left:400px;
+}
+
+.imgHilera {
+    margin-top: 20px;
+    width: 200px;
+    height: 120px;
+    transition: 0.8s;
+}
+
+.jumbotron {
+    color: white;
+    background-color: transparent;
+    text-align: center;
+}
+
+.txtCarrousel {
+    margin-top: -160px;
+    background-color: black;
+    opacity: 0.8;
+    height: 140px;
+    z-index: 1;
+    color: white;
+    text-align:center;
+}
+
+    .txtCarrousel  h3 {
+        padding-top:20px;
+    }
+.div {
+    color: white;
+    text-align: center;
+}
+
+    .div h2 {
+        color: white;
+    }
+
+.linea {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+#promociones {
+    background-color: lightgray;
+    background-image: radial-gradient(to bottom, black, white);
+    width: 100%;
+    height: 200px;
+}
+
+section {
+    margin-top: 70px;
+}
+
+.scrollGallery, .scrollDigital, .scrollImpresion, .scrollSoporte {
+    color: white;
+    background-image: linear-gradient(to right, black, white);
+    opacity: 0;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.gal {
+    display: inline-block;
+    opacity: 0;
+}
+
+.galContendor {
+    position: relative;
+    width:360px;
+}
+
+.textGalIndex {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    width: 360px;
+    transition: .5s ease;
+    opacity: 0;
+    font-size: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.galContenedor:hover .textGalIndex {
+    opacity: 1;
+}
+
+.imgGalIndex {
+    width: 100%;
+    height: 200px;
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+    .imgGalIndex:hover {
+        box-shadow: 10px 1px 16px 1px black;
+    }
+
+.texto {
+    color: white;
+    transition: 0.5s;
+    margin-top: 10px;
+    text-align: center;
+}
+
+    .texto:hover {
+        text-decoration: underline;
+        color:white;
+    }
+
+.btnTop {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    font-size: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 30px;
+    float: right;
+    margin-left: 1400px;
+    margin-top: 550px;
+    box-shadow: 5px 1px 5px 1px black;
+    border: none;
+}
+
+    .btnTop:hover {
+        color: darkgray;
+        font-size: 25px;
+        padding: 25px;
+        border-radius: 40px;
+    }
+
+.textLogin {
+    width: 30px;
+}
+
+.fotoGrande {
+    width: 100%;
+    max-height: 500px
+}
+
+#btnMenu{
+    font-size:24px;
+    color:black;
+}

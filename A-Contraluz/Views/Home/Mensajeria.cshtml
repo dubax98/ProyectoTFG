@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Mensajeria";
+}
+
+<div class="container">
+    <h2>Enviar mensaje</h2>
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mensaje">
+                    <table>
+                        <tr>
+                            <td><label style="color:white">De: </label></td>
+                            <td>
+                                <input class="form-control" type="text" name="tSolicitante" id="tSolicitante" value="" style="width:100%;margin-left:20px" placeholder="Escriba su correo electrónico" />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="color:white">Asunto: </label></td>
+                            <td>
+                                <input class="form-control" type="text" name="tAsunto" id="tAsunto" value="" style="width:100%;margin-left:20px" placeholder="Escriba un asunto" />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label style="color:white">Mensaje: </label></td>
+                            <td>
+                                <textarea cols="60" rows="6" id="tMensaje" style="width:100%; margin-left:20px" name="tmensaje" placeholder="Escriba su mensaje"></textarea>
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <br />
+                                <button type="submit" id="enviar " class="btn btn-default" style="margin-left:82px;width:150px">Enviar</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <label style="color:white">
+                        @ViewBag.Mensaje
+                    </label>
+                    <br />
+                    <label style="color:white">
+                        @ViewBag.Error
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+            <h2>Información</h2>
+            <p>
+                ¿Te gustaría reservar una sesión fotográfica o solicitar información a la tienda?
+            </p>
+            <p>Rellena el siguiente formulario y envíanos un mensaje:</p>
+        </div>
+    </div>
+</div>
+
+

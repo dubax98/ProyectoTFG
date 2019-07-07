@@ -1,0 +1,46 @@
+﻿@model IEnumerable<A_Contraluz.Models.CarritoCompra>
+
+@{
+    ViewBag.Title = "ListadoCarritoCompra";
+}
+
+
+
+<div style="width:100%;background-color:white">
+    <br />
+    <h2 style="margin-left:50px;color:black">Cesta</h2>
+    <hr />
+    <table style="margin-left:50px">
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Modelo)" alt="Alternate Text" style="margin-top:-60px" width="90px" height="90px" />
+                </td>
+                <td>
+                    @using (Html.BeginForm("ListadoFiltroProductos", "CarritoCompras", FormMethod.Get))
+                    {
+                        <h4 style="color:blue;margin-left:30px;width:500px;margin-top:-10px">@Html.DisplayFor(modelItem => item.Descripcion)</h4>
+                        <h5 style="margin-left:30px;margin-top:-10px">@Html.DisplayFor(modelItem => item.Precio)€</h5>
+                        <p style="color:cornflowerblue;margin-left:30px;margin-bottom:50px">Envio gratis a domicilio.</p>
+                        <hr />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <hr />
+    @{
+        float precio = Model.Sum(x => x.Precio);
+
+        <h3 style="color:black;margin-left:50px"><b>Precio Total: </b>@precio €</h3>
+    }
+    <br />
+    <p class="btn btn-default" style="margin-left:50px;margin-top:-10px;margin-bottom:50px;width:200px">@Html.ActionLink("Comprar", "Formulario", "CarritoCompras")</p>
+</div>
+<br />
+
+
+

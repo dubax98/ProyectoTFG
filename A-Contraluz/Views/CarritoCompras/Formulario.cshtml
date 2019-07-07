@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "Formulario";
+}
+
+<div class="container" style="margin-top:50px">
+    <h2>Formulario</h2>
+    <br />
+    <h4>DATOS PERSONALES</h4>
+    <form>
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Nombre:</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" value="" placeholder="Nombre">
+                        <label id="errorNombre" class="lblError"></label>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Primer apellido:</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido1" value="" placeholder="Apellido1">
+                        <p id="errorApellido1" class="lblError"></p>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="lblFormulario">Segundo apellido:</label>
+                        <input type="text" class="form-control" id="apellido2" placeholder="Apellido2">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Correo electrónico:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <label id="errorEmail" class="lblError"></label>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Contraseña:</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                        <label id="errorPassword" class="lblError"></label>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="lblFormulario">Sexo:</label>
+                    <br />
+                    <input type="radio" name="name" class="form-check-input sexo" value="Masculino" checked /> Masculino
+                    <input type="radio" name="name" class="form-check-input sexo" value="Femenino" /> Femenino
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-top:-40px">
+                <h4>DIRECCIÓN</h4>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Provincia:</label>
+                        <select class="form-control" id="provincia">
+                            <option value="">Elija una provincia</option>
+                            <option value="La Coruña">La Coruña</option>
+                            <option value="Lugo">Lugo</option>
+                            <option value="Orense">Orense</option>
+                            <option value="Pontevedra">Pontevedra</option>
+                            <option value="Asturias">Asturias</option>
+                            <option value="Cantabria">Cantabria</option>
+                            <option value="Vizcaya">Vizcaya</option>
+                            <option value="Guipúzcua">Guipúzcua</option>
+                            <option value="Álava">Álava</option>
+                            <option value="Navarra">Navarra</option>
+                            <option value="La Rioja">La Rioja</option>
+                            <option value="Huesca">Huesca</option>
+                            <option value="Zaragoza">Zaragoza</option>
+                            <option value="Teruel">Teruel</option>
+                            <option value="Lérida">Lérida</option>
+                            <option value="Gerona">Gerona</option>
+                            <option value="Barcelona">Barcelona</option>
+                            <option value="Tarragona">Tarragona</option>
+                            <option value="Castellón">Castellón</option>
+                            <option value="Valencia">Valencia</option>
+                            <option value="Alicante">Alicante</option>
+                            <option value="León">León</option>
+                            <option value="Palencia">Palencia</option>
+                            <option value="Burgos">Burgos</option>
+                            <option value="Soria">Soria</option>
+                            <option value="Segovia">Segovia</option>
+                            <option value="Valladolid">Valladolid</option>
+                            <option value="Ávila">Ávila</option>
+                            <option value="Salamanca">Salamanca</option>
+                            <option value="Zamarora">Zamarora</option>
+                            <option value="Cáceres">Cáceres</option>
+                            <option value="Badajoz">Badajoz</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Toledo">Toledo</option>
+                            <option value="Guadalajara">Guadalajara</option>
+                            <option value="Cuenca">Cuenca</option>
+                            <option value="Albacete">Albacete</option>
+                            <option value="Ciudad Real">Ciudad Real</option>
+                            <option value="Murcia">Murcia</option>
+                            <option value="Huelva">Huelva</option>
+                            <option value="Seviila">Seviila</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Jaen">Jaen</option>
+                            <option value="Almería">Almería</option>
+                            <option value="Granada">Granada</option>
+                            <option value="Málaga">Málaga</option>
+                            <option value="Cádiz">Cádiz</option>
+                            <option value="Islas Baleares">Islas Baleares</option>
+                            <option value="Mallorca">Mallorca</option>
+                            <option value="Menorca">Menorca</option>
+                            <option value="Santa Cruz">Santa Cruz</option>
+                            <option value="Las Palmas">Las Palmas</option>
+                            <option value="Tenerife">Tenerife</option>
+                            <option value="Ceuta">Ceuta</option>
+                            <option value="Melilla">Melilla</option>
+                        </select>
+                        <p id="errorProvincia" class="lblError"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Dirección</label>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <select class="form-control" id="tipoDireccion">
+                                    <option value="Calle">Calle</option>
+                                    <option value="Avenida">Avenida</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-9">
+                                <input type="text" name="name" class="form-control" id="nombreDireccion" value="" placeholder="Nombre de la dirección" />
+                                <p id="errorNombreDireccion" class="lblError"></p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <small class="lblFormulario">* </small>
+                                <label class="lblFormulario">CP</label>
+                                <input type="number" class="form-control" id="codPostal" placeholder="Código Postal">
+                                <label id="errorCodPostal" class="lblError"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <h4>MODO DE PAGO</h4>
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Modo de pago</label>
+                        <select class="form-control" id="tipoPago">
+                            <option value="">Elija el modo de pago</option>
+                            <option value="Pay pal">Pay pal</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Mastercad">Mastercad</option>
+                            <option value="American Express">American Express</option>
+                            <option value="Maestro">Maestro</option>
+                            <option value="Discover">Discover</option>
+                            <option value="JCB">JCB</option>
+                        </select>
+                        <label id="errorTipoPago" class="lblError"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://securionpay.com/es/wp-content/uploads/sites/3/2016/03/credit_logos_xl.svg" id="imagenTarjetas" alt="imagen tipos de tarjetas" width="100px" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <small class="lblFormulario">* </small>
+                        <label class="lblFormulario">Num. Tarjeta</label>
+                        <input type="number" class="form-control" id="numTarjeta" placeholder="Número de tarjeta de pago">
+                        <label id="errorNumTarjeta" class="lblError"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" id="btnEnviarForm" onclick="validarForm()">Enviar</button>
+                <br />
+                <p style="color:white">@ViewBag.Mensaje</p>
+            </div>           
+        </div>
+    </form>
+</div>
+

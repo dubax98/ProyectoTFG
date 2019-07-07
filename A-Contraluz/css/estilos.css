@@ -1,0 +1,177 @@
+﻿body {
+    color: black;
+    background-image: linear-gradient(to bottom, black, white);
+    font-family:Century;
+}
+
+/*-----------------LAYOUT-------------------*/
+.navbar{
+    background-color:white;
+    box-shadow:10px 1px 16px 1px black;
+}
+
+.sidenav {
+    height: 95%;
+    margin-top:50px;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.8s;
+    padding-top: 60px;
+}
+
+.sidenav a, ul li, li p {
+    padding: 5px;
+    color: white;
+    display: block;
+    transition: 0.5s;
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+    ul li ul li::before {
+        content: "\02010"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: white; /* Change the color */
+        font-weight: bolder; /* If you want it to be bold */
+        margin-left:20px;
+        position:absolute; /* Also needed for space (tweak if needed) */
+    }
+
+.sidenav p, ul li:hover {
+    color: #f1f1f1;
+}
+
+.sidenav #botonCerrarMenu {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#tituloHeader {
+    color: black;
+    margin-top: -25px;
+    margin-left: 450px;
+    position: absolute;
+    font-weight: bold;
+}
+
+ul li ul li {
+    margin-left: -10px;
+    display: none;
+    margin-top: -18px;
+}
+
+.fas {
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 17px;
+}
+
+#btnAbrirMenu {
+    font-size: 30px;
+    cursor: pointer;
+    color: black
+}
+ .primerEnlace{
+     margin-top:10px;
+ }
+#iconCarrito {
+    color: orange;
+    font-size: 20px
+}
+
+.glyphicon {
+    font-size: 12px;
+    color: grey;
+    transition: 0.5s;
+    margin-left: 5px;
+}
+
+.glyphicon:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+li p:hover, li:hover {
+    color: white;
+}
+
+#menu {
+    color: white;
+    font-size: 25px;
+}
+
+.actionLink:hover {
+    color: grey;
+}
+
+.raya {
+    background-color: grey;
+    height: 1px;
+    width: 300px;
+}
+
+#botonMenu {
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.informacion {
+    margin-left: 210px;
+    margin-top: -28px;
+    font-size: 18px;
+}
+
+.txtInformacion{
+    color:black;
+    margin-left:10px;
+}
+
+.txtInformacion:hover {
+    text-decoration:underline;
+    color:black;
+}
+
+h4 {
+    color: white
+}
+
+.login {
+    margin-left: 1200px;
+    margin-top: -22px;
+    font-size: 18px;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+h2{
+    color:white;
+}
+
+#divInfoMensaje{
+    margin-top:-20px;
+    color:white;
+}
+
+#divInfoMensaje h2 {
+    text-decoration:underline;
+}
+
+address{
+    color:lightgrey;
+    margin-top:40px;
+}
+
+.siteMap{
+    color:white;
+}
+

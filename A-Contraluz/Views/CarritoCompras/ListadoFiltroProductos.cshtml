@@ -1,0 +1,86 @@
+﻿@model IEnumerable<A_Contraluz.Models.CarritoCompra>
+
+@{
+    ViewBag.Title = "ListadoFiltroProductos";
+}
+
+<div class="carritoCompra">
+    <br />
+    <div class="encabezadoCarrito">
+        <h2>Tienda online</h2>
+        @using (Html.BeginForm("ListadoFiltroProductos", "CarritoCompras", FormMethod.Get))
+        {
+            @Html.TextBox("BuscaDescripcion")
+            <input type="submit" name="name" value="Buscar" style="width:100px;margin-left:20px" />
+        }
+    </div>
+    @{
+        if (User.IsInRole("Administrador"))
+        {
+            <p style="margin-top:-20px;margin-left:55px;margin-bottom:30px">
+                @Html.ActionLink("Agregar producto", "Create")
+                @Html.ActionLink(" | Generar EXCEL", "PedidosExcel", "CarritoCompras")
+            </p>
+            <p type="button" class=""></p>
+            
+        }
+    }
+    <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-12" style="background-color:white;border-right:1px solid lightgrey">
+            <div class="container">
+                <br />
+                <p><b>Categoria</b></p>
+                @using (Html.BeginForm("ListadoFiltroProductos", "CarritoCompras", FormMethod.Get))
+                {
+                    <ul class="listadoCategoria">
+
+                        <li>@Html.DropDownList("BuscaArticulos", "todos")</li>
+
+
+                    </ul>
+                    <br />
+                    <p><b>Precio</b></p>
+                    <ul class="listadoCategoria">
+
+                        <li>@Html.DropDownList("precio", "Todos")</li>
+
+
+                    </ul>
+                    <ul class="listadoCategoria">
+                        <li><input type="submit" name="name" value="Buscar" /></li>
+                    </ul>
+                }
+                <br />
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-10 col-sm-12" style="background-color: white">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-xs-12 @Html.DisplayFor(modelItem => item.Categoria)">
+                        <div class="divProductos">
+                            <div class="divProductos2">
+                                <center>
+                                    @{
+                                        if (User.IsInRole("Administrador"))
+                                        {
+                                            @Html.ActionLink("Edit | ", "Edit", new { id = item.CarritoCompraId })
+                                            @Html.ActionLink("Details | ", "Details", new { id = item.CarritoCompraId })
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.CarritoCompraId })
+                                        }
+                                    }
+                                </center>
+                                <img src="@Html.DisplayFor(modelItem => item.Modelo)" alt="Alternate Text" />
+                                <p style="padding-top:20px;height:70px"><b>@Html.DisplayNameFor(model => model.Descripcion): </b>@Html.DisplayFor(modelItem => item.Descripcion)</p>
+                                <p><b>@Html.DisplayNameFor(model => model.Precio): </b>@Html.DisplayFor(modelItem => item.Precio)€</p>
+                                <p><b>@Html.DisplayNameFor(model => model.Cantidad): </b>@Html.DisplayFor(modelItem => item.Cantidad)</p>
+                                <p class="btn btn-default" style="margin-left:15px;margin-top:-10px;width:200px">@Html.ActionLink("Añadir", "ListadoCarritoCompra", "CarritoCompras", new { id = item.CarritoCompraId }, null)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

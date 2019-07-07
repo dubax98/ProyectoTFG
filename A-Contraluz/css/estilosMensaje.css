@@ -1,0 +1,9 @@
+﻿#tMensaje #tAsunto #tSolicitante {
+    width: 100%;
+    margin-left: 20px;
+}
+
+#btnEnviarMensaje {
+    margin-left: 82px;
+    width: 150px;
+}
